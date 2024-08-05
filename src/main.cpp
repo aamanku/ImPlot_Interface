@@ -27,6 +27,16 @@ int main() {
 		double y_val = radius * std::sin(omega*t);
 		plotter.AddDynamicPlot("circle", x_val, y_val, 100);
 
+		// static plot
+		std::vector<double> x(1000);
+		std::vector<double> y(1000);
+		for(int i = 0; i < 1000; i++)
+		{
+			x[i] = i;
+			y[i] = std::sin(omega*t + i*0.01);
+		}
+		plotter.AddStaticPlot("sin", x, y, "X", "Y");
+
 		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 	}
 

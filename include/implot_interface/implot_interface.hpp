@@ -58,7 +58,7 @@ namespace ImPlotInterface
 		void LockMutex_(std::mutex& mtx);
 		void UnLockMutex_(std::mutex& mtx);
 	public:
-		ImPlotter(int width = 1280, int height = 720, bool use_mutex = true);
+		explicit ImPlotter(int width = 1280, int height = 720, bool use_mutex = true);
 		~ImPlotter();
 
 		void RunMainLoop();
@@ -91,9 +91,9 @@ namespace ImPlotInterface
 
 		void Pauser();
 
-		bool IsRunning() const;
-		bool IsPaused() const;
-		bool IsGlfwFreed() const;
+		[[nodiscard]] bool IsRunning() const;
+		[[nodiscard]] bool IsPaused() const;
+		[[nodiscard]] bool IsGlfwFreed() const;
 
 
 

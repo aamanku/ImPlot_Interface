@@ -275,7 +275,7 @@ void ImPlotter::AddStaticPlot(const std::string& plot_name,
 	}
 }
 
-inline void ImPlotter::AddStaticPlot(const std::string& plot_name,
+void ImPlotter::AddStaticPlot(const std::string& plot_name,
 	const std::vector<double>& x_data,
 	const std::vector<double>& y_data,
 	const std::string& x_label,
