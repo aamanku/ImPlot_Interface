@@ -8,12 +8,7 @@
 #include <mutex>
 #include <map>
 #include <thread>
-#include <GLFW/glfw3.h> // Will drag system OpenGL headers
-#include "backends/imgui_impl_glfw.h"
-#include "backends/imgui_impl_opengl3.h"
 
-#include "implot.h"
-#include "implot_internal.h"
 
 namespace ImPlotInterface
 {

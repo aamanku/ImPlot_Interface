@@ -55,10 +55,16 @@ target_include_directories(ImPlot_Interface PUBLIC ${imgui_SOURCE_DIR} ${implot_
 target_link_libraries(ImPlot_Interface PUBLIC imgui implot glfw ${OPENGL_LIBRARIES})
 set_property(TARGET ImPlot_Interface PROPERTY POSITION_INDEPENDENT_CODE ON)
 
+
+
+
 # Add the executable
 add_executable(example src/main.cpp)
 target_include_directories(example PUBLIC ${imgui_SOURCE_DIR} ${implot_SOURCE_DIR} ${CMAKE_SOURCE_DIR}/include)
 target_link_libraries(example ImPlot_Interface)
+
+
+
 
 
 

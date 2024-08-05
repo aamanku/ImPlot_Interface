@@ -1,4 +1,10 @@
 #include "implot_interface/implot_interface.hpp"
+#include <GLFW/glfw3.h> // Will drag system OpenGL headers
+#include "backends/imgui_impl_glfw.h"
+#include "backends/imgui_impl_opengl3.h"
+
+#include "implot.h"
+#include "implot_internal.h"
 using namespace ImPlotInterface;
 
 //extern bool ImPlotInterface::use_mutex_global;
