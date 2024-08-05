@@ -51,12 +51,14 @@ set_property(TARGET implot PROPERTY POSITION_INDEPENDENT_CODE ON)
 
 ### Create ImPlot_Interface library
 add_library(ImPlot_Interface STATIC src/implot_interface.cpp)
-target_include_directories(ImPlot_Interface PRIVATE ${imgui_SOURCE_DIR} ${implot_SOURCE_DIR})
-target_include_directories(ImPlot_Interface PUBLIC ${CMAKE_SOURCE_DIR}/include)
-target_link_libraries(ImPlot_Interface PRIVATE imgui implot glfw ${OPENGL_LIBRARIES})
+target_include_directories(ImPlot_Interface PUBLIC ${imgui_SOURCE_DIR} ${implot_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_link_libraries(ImPlot_Interface PUBLIC imgui implot glfw ${OPENGL_LIBRARIES})
 set_property(TARGET ImPlot_Interface PROPERTY POSITION_INDEPENDENT_CODE ON)
 
-
+export(TARGETS ImPlot_Interface implot imgui
+        NAMESPACE ImPlot_Interface::
+        FILE ImPlot_InterfaceConfig.cmake
+        )
 
 
 # Add the executable
